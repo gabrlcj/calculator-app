@@ -1,0 +1,98 @@
+@import 'variables';
+
+
+// Reset -------------------------------------------------
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 100vh;
+    font: 700 2rem 'Spartan', sans-serif;
+    background: $main-background;
+}
+
+.calculator {
+    margin: 0 auto;
+}
+
+.is-pressed {
+    filter: opacity(.6);
+}
+
+// Botões ----------------------------------------------
+button {
+    font: 700 2rem 'Spartan', sans-serif;
+    line-height: 2.25rem;
+    color: $dark-blue-greyish;
+    padding: 1.25rem 2.25rem;
+    cursor: pointer;
+
+    border-radius: 1rem;
+    background: $grey-background;
+    border: none;
+    border-bottom: .25rem solid $shadow-grey-background;
+}
+    
+.blue {
+    color: white;
+    background: $light-blue-background;
+    border-bottom: .35rem solid $shadow-light-blue-background;
+}
+
+.red {
+    color: white;
+    background: $red-background;
+    border-bottom: .25rem solid $shadow-red-background;
+}
+
+// Botão toggle para a troca de tema -------------------------------
+.toggle {
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: .5rem;
+    background: $calc-background;
+    position: relative;
+
+    .switch.theme1,
+    .switch.theme2,
+    .switch.theme3 {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        float: left;
+        padding: 0 1rem;
+        -webkit-transition: 200ms ease-out;
+        -moz-transition: 200ms ease-out;
+        transition: 200ms ease-out;
+    }
+
+    .switch.active {
+        color: white;
+        border-radius: .5rem;
+        -moz-box-shadow: 0px 0px 7px 1px $red-background;
+        -webkit-box-shadow: 0px 0px 7px 1px $red-background;
+        -o-box-shadow: 0px 0px 7px 1px $red-background;
+        box-shadow: 0px 0px 7px 1px $red-background;
+        
+        &.theme1.active {
+            background-color: $red-background;
+        }
+        
+        &.theme2.active {
+            background-color: $red-background;
+        }
+        
+        &.theme3.active {
+            background-color: $red-background;
+        }
+    }
+}

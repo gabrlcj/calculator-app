@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  font: 700 2rem 'Spartan', sans-serif;
+  background: #3a4764;
+}
+
+.calculator {
+  margin: 0 auto;
+}
+
+.is-pressed {
+  -webkit-filter: opacity(0.6);
+          filter: opacity(0.6);
+}
+
+button {
+  font: 700 2rem 'Spartan', sans-serif;
+  line-height: 2.25rem;
+  color: #444b5a;
+  padding: 1.25rem 2.25rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  background: #eae3dc;
+  border: none;
+  border-bottom: 0.25rem solid #b4a597;
+}
+
+.blue {
+  color: white;
+  background: #637097;
+  border-bottom: 0.35rem solid #404e72;
+}
+
+.red {
+  color: white;
+  background: #d03f2f;
+  border-bottom: 0.25rem solid #93261a;
+}
+
+.toggle {
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: .5rem;
+  background: #232c43;
+  position: relative;
+}
+
+.toggle .switch.theme1,
+.toggle .switch.theme2,
+.toggle .switch.theme3 {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 1rem;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+.toggle .switch.active {
+  color: white;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0px 0px 7px 1px #d03f2f;
+  -o-box-shadow: 0px 0px 7px 1px #d03f2f;
+  box-shadow: 0px 0px 7px 1px #d03f2f;
+}
+
+.toggle .switch.active.theme1.active {
+  background-color: #d03f2f;
+}
+
+.toggle .switch.active.theme2.active {
+  background-color: #d03f2f;
+}
+
+.toggle .switch.active.theme3.active {
+  background-color: #d03f2f;
+}
+
+.header {
+  width: 100%;
+}
+
+.header .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header .title h1 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.header .title .theme-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .title .theme-toggle p {
+  font-size: .8rem;
+  color: white;
+  margin-right: 1rem;
+}
+
+.header .number {
+  background: #182034;
+  border-radius: 1rem;
+}
+
+.header .number .number-output {
+  text-align: right;
+  color: white;
+  padding: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.calculator-keys {
+  background: #232c43;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.calculator-keys .button-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calculator-keys .alt-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr;
+      grid-template-columns: 2fr 2fr;
+  gap: 1rem;
+}
+/*# sourceMappingURL=style.css.map */

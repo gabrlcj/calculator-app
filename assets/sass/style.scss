@@ -1,0 +1,61 @@
+@import 'global';
+@import 'variables';
+
+.header {
+    width: 100%;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+
+            p {
+                font-size: .8rem;
+                color: white;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .number {
+        background: $screen-background;
+        border-radius: 1rem;
+
+        .number-output {
+            text-align: right;
+            color: white;
+            padding: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.calculator-keys {
+    background: $calc-background;
+    padding: 1.5rem;
+    border-radius: 1rem;
+
+    .button-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .alt-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 1rem;
+    }
+}

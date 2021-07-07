@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/assets/sass/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+        <title>Frontend Mentor | Calculator app</title>
+    </head>
+    <body>
+        <main class="calculator">
+            <header class="header">
+                <div class="title">
+                    <h1>calc</h1>
+                    <div class="theme-toggle">
+                        <p>THEMES</p>
+                        <div class="toggle">
+                            <div id="theme1" class="switch theme1 active" onclick="onChangeThemes('theme1')">1</div>
+                            <div id="theme2" class="switch theme2" onclick="onChangeThemes('theme2')">2</div>
+                            <div id="theme3" class="switch theme3" onclick="onChangeThemes('theme3')">3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="number">
+                    <div class="number-output">0</div>
+                </div>
+            </header>
+            <section class="calculator-keys">
+                <div class="button-wrapper">
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button class="blue key-operator" data-action="delete">DEL</button>
+                </div>
+                <div class="button-wrapper">
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button class="key-operator" data-action="add">+</button>
+                </div>
+                <div class="button-wrapper">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button class="key-operator" data-action="minus">-</button>
+                </div>
+                <div class="button-wrapper">
+                    <button data-action="decimal">.</button>
+                    <button>0</button>
+                    <button data-action="divide">/</button>
+                    <button class="key-operator" data-action="multiply">x</button>
+                </div>
+                <div class="alt-wrapper">
+                    <button class="blue" data-action="clear">RESET</button>
+                    <button class="red key-operator" data-action="calculate">=</button>
+                </div>
+            </section>
+
+        
+            <!-- <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                Coded by <a href="#">Your Name Here</a>.
+            </div> -->
+        </main>
+
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
