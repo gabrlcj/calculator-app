@@ -106,7 +106,7 @@ class Calculator {
         if (isNaN(integerDigits)) {
             integerDisplay = ''
         } else {
-            integerDisplay = integerDigits.toLocaleString('pt-BR', { maximumFractionDigit: 0 })
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigit: 0 })
         }
         if (decimalDigit != null) {
             return `${integerDisplay}.${decimalDigit}`
@@ -155,6 +155,7 @@ operationsButtons.forEach(button => {
 equalsButton.addEventListener('click', button => {
     calculator.compute()
     calculator.updateDisplay()
+    calculator.reset()
 })
 
 resetButton.addEventListener('click', button => {

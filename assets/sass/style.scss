@@ -6,12 +6,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 1.5rem;
+        margin-bottom: .5rem;
+
+        @include screen-size(medium) {
+            @include container-size(90vw, 100%);
+        }
+
+        @include screen-size(small) {
+            @include container-size(90vw, 100%);
+            padding: 1rem 0;
+        }
 
         h1 {
             color: white;
             font-size: 2.5rem;
             transition: color .5s;
+            margin-bottom: 2rem;
+            text-shadow: 5px 2px 0px black;
         }
 
         .theme-toggle {
@@ -23,21 +34,22 @@
                 font-size: .8rem;
                 margin-right: 1rem;
                 transition: color .5s;
-            }
+                text-shadow: 2px 2px 0px black;
 
-            .toggle {
-                background-color: $calc-toggle-bg;
-                transition: background .5s;
+                @include screen-size(small) {
+                    margin-right: .8rem;
+                }
             }
         }
     }
 
     .number {
         height: 8rem;
-        border-radius: 1rem;
+        border-radius: .8rem;
         margin-bottom: 1.5rem;
         background: $screen-bg;
         transition: background .5s;
+        text-shadow: 2px 2px 0px black;
 
         .previous-number {
             text-align: right;
@@ -64,6 +76,10 @@
     background: $calc-toggle-bg;
     transition: background .5s;
 
+    @include screen-size(small) {
+        padding: 1rem;
+    }
+
     .button-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -71,6 +87,10 @@
         gap: 1rem;
 
         margin-bottom: 1rem;
+
+        @include screen-size(small) {
+            gap: .8rem;
+        }
     }
 
     .button-wrapper-alt {
@@ -95,28 +115,28 @@
             h1 {
                 color: $W-number-color;
                 transition: color .5s;
+                text-shadow: 5px 2px 0px #a5a5a5;
             }
             
             .theme-toggle{
                 p {
                     color: $W-number-color;
                     transition: color .5s;
-                }
-
-                .toggle {
-                    background-color: $W-calc-toggle-bg;
-                    transition: background .5s;
+                    text-shadow: 2px 2px 0px #a5a5a5;
                 }
             }
         }
             
         .number {
+            border: 1px solid rgba(192, 192, 192, .7);
             background: $W-screen-bg;
             transition: background .5s;
+            text-shadow: 2px 2px 0px #a5a5a5;
             
             .previous-number {
                 color: $W-previous-number-color;
                 transition: color .5s;
+                text-shadow: 2px 2px 0px whitesmoke;
             }
 
             .current-number {
@@ -150,17 +170,14 @@
             h1 {
                 color: $P-number-color;
                 transition: color .5s;
+                text-shadow: 5px 2px 0px $P-del-reset-bg;
             }
             
             .theme-toggle{
                 p {
                     color: $P-number-color;
                     transition: color .5s;
-                }
-
-                .toggle {
-                    background-color: $P-calc-toggle-bg;
-                    transition: background .5s;
+                    text-shadow: 2px 2px 0px $P-del-reset-bg;
                 }
             }
         }
@@ -168,6 +185,7 @@
         .number {
             background: $P-screen-bg;
             transition: background .5s;
+            text-shadow: 2px 2px 0px $P-del-reset-bg;
             
             .previous-number {
                 color: $P-previous-number-color;
