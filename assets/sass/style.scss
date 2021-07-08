@@ -2,8 +2,6 @@
 @import 'variables';
 
 .header {
-    width: 100%;
-
     .title {
         display: flex;
         align-items: center;
@@ -13,6 +11,7 @@
         h1 {
             color: white;
             font-size: 2.5rem;
+            transition: color .5s;
         }
 
         .theme-toggle {
@@ -20,42 +19,181 @@
             align-items: center;
 
             p {
-                font-size: .8rem;
                 color: white;
+                font-size: .8rem;
                 margin-right: 1rem;
+                transition: color .5s;
+            }
+
+            .toggle {
+                background-color: $calc-toggle-bg;
+                transition: background .5s;
             }
         }
     }
 
     .number {
-        background: $screen-background;
+        height: 8rem;
         border-radius: 1rem;
+        margin-bottom: 1.5rem;
+        background: $screen-bg;
+        transition: background .5s;
 
-        .number-output {
+        .previous-number {
             text-align: right;
+            font-size: 1.25rem;
+            margin-bottom: .5rem;
+            padding: 1.25rem 1.25rem 0 0;
+            color: $previous-number-color;
+            transition: color .5s;
+        }
+
+        .current-number {
             color: white;
-            padding: 3.2rem;
-            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            text-align: right;
+            font-size: 2.25rem;
+            transition: color .5s;
         }
     }
 }
 
 .calculator-keys {
-    background: $calc-background;
     padding: 1.5rem;
     border-radius: 1rem;
+    background: $calc-toggle-bg;
+    transition: background .5s;
 
     .button-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto;
         gap: 1rem;
+
         margin-bottom: 1rem;
     }
 
-    .alt-wrapper {
+    .button-wrapper-alt {
         display: grid;
         grid-template-columns: 2fr 2fr;
         gap: 1rem;
+        
+        .equal {
+            color: white;
+            background: $equal-bg;
+            transition: color .5s;
+            transition: background .5s;
+            border-bottom: .25rem solid $shadow-equal-bg;
+        }
+    }
+}
+
+// Theme color ------------------------------------------------
+.white-theme {
+    .header {
+        .title {
+            h1 {
+                color: $W-number-color;
+                transition: color .5s;
+            }
+            
+            .theme-toggle{
+                p {
+                    color: $W-number-color;
+                    transition: color .5s;
+                }
+
+                .toggle {
+                    background-color: $W-calc-toggle-bg;
+                    transition: background .5s;
+                }
+            }
+        }
+            
+        .number {
+            background: $W-screen-bg;
+            transition: background .5s;
+            
+            .previous-number {
+                color: $W-previous-number-color;
+                transition: color .5s;
+            }
+
+            .current-number {
+                color: $W-number-color;
+                transition: color .5s;
+            }
+        }
+        
+    }
+
+    .calculator-keys {
+        background: $W-calc-toggle-bg;
+        transition: background .5s;
+
+        .button-wrapper-alt {
+            .equal {
+                color: white;
+                background: $W-equal-bg;
+                border-bottom-color: $W-shadow-equal-bg;
+                transition: background .5s;
+                transition: color .5s;
+            }
+        }
+    }
+}
+
+// Theme color ------------------------------------------------
+.purple-theme {
+    .header {
+        .title {
+            h1 {
+                color: $P-number-color;
+                transition: color .5s;
+            }
+            
+            .theme-toggle{
+                p {
+                    color: $P-number-color;
+                    transition: color .5s;
+                }
+
+                .toggle {
+                    background-color: $P-calc-toggle-bg;
+                    transition: background .5s;
+                }
+            }
+        }
+            
+        .number {
+            background: $P-screen-bg;
+            transition: background .5s;
+            
+            .previous-number {
+                color: $P-previous-number-color;
+                transition: color .5s;
+            }
+
+            .current-number {
+                color: $P-number-color;
+                transition: color .5s;
+            }
+        }
+        
+    }
+
+    .calculator-keys {
+        background: $P-calc-toggle-bg;
+        transition: background .5s;
+
+        .button-wrapper-alt {
+            .equal {
+                color: black;
+                background: $P-equal-bg;
+                border-bottom-color: $P-shadow-equal-bg;
+                transition: color .5s;
+                transition: background .5s;
+            }
+        }
     }
 }

@@ -16,41 +16,40 @@ body {
 
     height: 100vh;
     font: 700 2rem 'Spartan', sans-serif;
-    background: $main-background;
+    background: $main-bg;
+    transition: background .5s;
 }
 
 .calculator {
     margin: 0 auto;
-}
-
-.is-pressed {
-    filter: opacity(.6);
+    overflow-x: hidden;
 }
 
 // Botões ----------------------------------------------
 button {
     font: 700 2rem 'Spartan', sans-serif;
     line-height: 2.25rem;
-    color: $dark-blue-greyish;
+    color: $number-color;
     padding: 1.25rem 2.25rem;
+    
     cursor: pointer;
 
-    border-radius: 1rem;
-    background: $grey-background;
     border: none;
-    border-bottom: .25rem solid $shadow-grey-background;
-}
-    
-.blue {
-    color: white;
-    background: $light-blue-background;
-    border-bottom: .35rem solid $shadow-light-blue-background;
+    border-radius: 1rem;
+    border-bottom: .25rem solid $shadow-number-bg;
+    background: $number-bg;
+    transition: background .5s;
+
+    &:hover {
+        opacity: .4;
+    }
 }
 
-.red {
+.del-reset {
     color: white;
-    background: $red-background;
-    border-bottom: .25rem solid $shadow-red-background;
+    border-bottom: .35rem solid $shadow-del-reset-bg;
+    background: $del-reset-bg;
+    transition: background .5s;
 }
 
 // Botão toggle para a troca de tema -------------------------------
@@ -59,7 +58,6 @@ button {
     height: 2rem;
     line-height: 2rem;
     border-radius: .5rem;
-    background: $calc-background;
     position: relative;
 
     .switch.theme1,
@@ -70,29 +68,116 @@ button {
         display: block;
         float: left;
         padding: 0 1rem;
-        -webkit-transition: 200ms ease-out;
-        -moz-transition: 200ms ease-out;
-        transition: 200ms ease-out;
+
+        -webkit-transition: 400ms ease-out;
+        -moz-transition: 400ms ease-out;
+        transition: 400ms ease-out;
     }
 
     .switch.active {
         color: white;
         border-radius: .5rem;
-        -moz-box-shadow: 0px 0px 7px 1px $red-background;
-        -webkit-box-shadow: 0px 0px 7px 1px $red-background;
-        -o-box-shadow: 0px 0px 7px 1px $red-background;
-        box-shadow: 0px 0px 7px 1px $red-background;
+
+        -moz-box-shadow: 0px 0px 7px 1px $equal-bg;
+        -webkit-box-shadow: 0px 0px 7px 1px $equal-bg;
+        -o-box-shadow: 0px 0px 7px 1px $equal-bg;
+        box-shadow: 0px 0px 7px 1px $equal-bg;
         
         &.theme1.active {
-            background-color: $red-background;
+            background-color: $equal-bg;
         }
         
         &.theme2.active {
-            background-color: $red-background;
+            background-color: $equal-bg;
         }
         
         &.theme3.active {
-            background-color: $red-background;
+            background-color: $equal-bg;
+        }
+    }
+}
+// Theme color ------------------------------------------------
+.white-theme {
+    background: $W-main-bg;
+    transition: background .5s;
+    
+    button {
+        color: $W-number-color;
+        border-bottom-color: $W-shadow-number-bg;
+        background: $W-number-bg;
+        transition: background .5s;
+    }
+    
+    .del-reset {
+        color: white;
+        border-bottom-color: $W-shadow-del-reset-bg;
+        background: $W-del-reset-bg;
+        transition: background .5s;
+    }
+
+    .toggle {
+        .switch.active {
+            color: $W-number-color;
+
+            -moz-box-shadow: 0px 0px 7px 1px $W-equal-bg;
+            -webkit-box-shadow: 0px 0px 7px 1px $W-equal-bg;
+            -o-box-shadow: 0px 0px 7px 1px $W-equal-bg;
+            box-shadow: 0px 0px 7px 1px $W-equal-bg;
+            
+            &.theme1.active {
+                background-color: $W-equal-bg;
+            }
+            
+            &.theme2.active {
+                background-color: $W-equal-bg;
+            }
+            
+            &.theme3.active {
+                background-color: $W-equal-bg;
+            }
+        }
+    }
+}
+
+// Theme color ------------------------------------------------
+.purple-theme {
+    background: $P-main-bg;
+    transition: background .5s;
+    
+    button {
+        color: $P-number-color;
+        border-bottom-color: $P-shadow-number-bg;
+        background: $P-number-bg;
+        transition: background .5s;
+    }
+    
+    .del-reset {
+        color: white;
+        border-bottom-color: $P-shadow-del-reset-bg;
+        background: $P-del-reset-bg;
+        transition: background .5s;
+    }
+
+    .toggle {    
+        .switch.active {
+            color: $P-number-color;
+
+            -moz-box-shadow: 0px 0px 7px 1px $P-equal-bg;
+            -webkit-box-shadow: 0px 0px 7px 1px $P-equal-bg;
+            -o-box-shadow: 0px 0px 7px 1px $P-equal-bg;
+            box-shadow: 0px 0px 7px 1px $P-equal-bg;
+            
+            &.theme1.active {
+                background-color: $P-equal-bg;
+            }
+            
+            &.theme2.active {
+                background-color: $P-equal-bg;
+            }
+            
+            &.theme3.active {
+                background-color: $P-equal-bg;
+            }
         }
     }
 }

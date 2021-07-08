@@ -1,135 +1,168 @@
+// Função para troca de temas ========================================================
 function onChangeThemes(themes){
     let theme1 = document.getElementById('theme1')
     let theme2 = document.getElementById('theme2')
     let theme3 = document.getElementById('theme3')
+    var element = document.body
 
     if(themes === 'theme1') {
-        theme2.className += 'switch theme2'
-        theme3.className += 'switch theme3'
+        theme2.classList.remove('active')
+        theme3.classList.remove('active')
 
         setTimeout(function () {
-            theme1.className += 'switch theme1 active'
-        }, 500)
+            theme1.classList.add('active')
+            element.classList.add('blue-theme')
+            element.classList.remove('white-theme')
+            element.classList.remove('purple-theme')
+        }, 600)
     } else if(themes === 'theme2') {
-        theme1.className += 'switch theme1'
-        theme3.className += 'switch theme3'
+        theme1.classList.remove('active')
+        theme3.classList.remove('active')
 
         setTimeout(function () {
-            theme2.className += 'switch theme2 active'
-        }, 500)
+            theme2.classList.add('active')
+            element.classList.add('white-theme')
+            element.classList.remove('purple-theme')
+            element.classList.remove('blue-theme')
+        }, 600)
     } else {
-        theme2.className += 'switch theme2'
-        theme1.className += 'switch theme1'
+        theme2.classList.remove('active')
+        theme1.classList.remove('active')
 
         setTimeout(function () {
-            theme3.className += 'switch theme3 active'
-        }, 500)
+            theme3.classList.add('active')
+            element.classList.add('purple-theme')
+            element.classList.remove('white-theme')
+            element.classList.remove('blue-theme')
+        }, 600)
     }
 }
 
-const calculator = document.querySelector('.calculator')
-const keys = calculator.querySelector('.calculator-keys')
-
-keys.addEventListener('click', e => {
-    if (e.target.matches('button')) {
-    
+// Metodo para a calculadora funcionar =============================================
+class Calculator {
+    constructor(previousOperandTextElement, currentOperandTextElement) {
+        this.previousOperandTextElement = previousOperandTextElement
+        this.currentOperandTextElement = currentOperandTextElement
+        this.reset()
     }
 
-    const key = e.target
-    const action = key.dataset.action
-
-    if(!action) {
-        console.log('numero')
+    reset() {
+        this.previousOperand = ''
+        this.currentOperand = ''
+        this.operation = undefined
     }
 
-    if(action === 'add' || action === 'minus' || action === 'divide' || action === 'multiply') {
-        console.log('operator key')
+    delete() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
-    if (action === 'decimal') {
-        console.log('decimal key!')
-    }
-    
-    if (action === 'clear') {
-        console.log('clear key!')
+    appendNumber(number) {
+        if (number === '.' && this.currentOperand.includes('.')) return
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
-    if (action === 'delete') {
-        console.log('delete key')
+    chooseOperation(operation) {
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
+            this.compute()
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ""
     }
-    
-    if (action === 'calculate') {
-        console.log('equal key!')
+
+    compute() {
+        let computation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev) || isNaN(current)) return
+        switch (this.operation) {
+            case '+':
+                computation = prev + current
+                break
+            case '-':
+                computation = prev - current
+                break
+            case '÷':
+                computation = prev / current
+                break
+            case 'x':
+                computation = prev * current
+                break
+            default: 
+                return
+        }
+
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
     }
+
+    getDisplayNumber(number) {
+        const stringNumber = number.toString()
+        const integerDigits = parseFloat(stringNumber.split('.')[0])
+        const decimalDigit = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigits)) {
+            integerDisplay = ''
+        } else {
+            integerDisplay = integerDigits.toLocaleString('pt-BR', { maximumFractionDigit: 0 })
+        }
+        if (decimalDigit != null) {
+            return `${integerDisplay}.${decimalDigit}`
+        } else {
+            return integerDisplay
+        }
+    }
+
+    updateDisplay() {
+        this.currentOperandTextElement.innerText = 
+        this.getDisplayNumber(this.currentOperand)
+        if (this.operation != null) {
+            this.previousOperandTextElement.innerText = 
+                `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        } else {
+            this.previousOperandTextElement.innerText = ''
+        }
+    }
+}
+
+
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationsButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const resetButton = document.querySelector('[data-reset]')
+const deleteButton = document.querySelector('[data-delete]')
+const previousOperandTextElement = document.querySelector('[data-previous-operand]')
+const currentOperandTextElement = document.querySelector('[data-current-operand]')
+
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
 })
 
-const display = document.querySelector('.number-output')
+operationsButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
 
-keys.addEventListener('click', e => {
-    if (e.target.matches('button')) {
-      const key = e.target
-      const action = key.dataset.action
-      const keyContent = key.textContent
-      const displayedNum = display.textContent
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
+})
 
-        if (!action){
-            if(displayedNum === 0){
-              display.textContent = keyContent 
-            } else {
-                display.textContent = displayedNum + keyContent
-            }
-        }
+resetButton.addEventListener('click', button => {
+    calculator.reset()
+    calculator.updateDisplay()
+})
 
-        if (action === 'decimal') {
-            display.textContent = displayedNum + '.'
-        }
-
-        if (action === 'add' || action === 'subtract' || action === 'multiply' || action === 'divide') {
-            key.classList.add('is-pressed')
-            // Add custom attribute
-            calculator.dataset.previousKeyType = 'operator'
-
-            calculator.dataset.firstValue = displayedNum
-            calculator.dataset.operator = action
-        }
-
-        // Remove .is-pressed class from all keys
-        Array.from(key.parentNode.children)
-        .forEach(key => key.classList.remove('is-pressed'))
-
-        const previousKeyType = calculator.dataset.previousKeyType
-
-        if (!action) {
-            if (displayedNum === '0' || previousKeyType === 'operator') {
-                display.textContent = keyContent
-            } else {
-                display.textContent = displayedNum + keyContent
-            }
-        }
-            
-        if (action === 'calculate') {
-            const firstValue = calculator.dataset.firstValue
-            const operator = calculator.dataset.operator
-            const secondValue = displayedNum
-            
-            display.textContent = calculate(firstValue, operator, secondValue)
-        }
-
-        const calculate = (n1, operator, n2) => {
-            // Perform calculation and return calculated value
-            let result = ''
-  
-            if (operator === 'add') {
-                result = parseFloat(n1) + parseFloat(n2)
-            } else if (operator === 'subtract') {
-                result = parseFloat(n1) - parseFloat(n2)
-            } else if (operator === 'multiply') {
-                result = parseFloat(n1) * parseFloat(n2)
-            } else if (operator === 'divide') {
-                result = parseFloat(n1) / parseFloat(n2)
-            }
-            
-            return result
-        }
-    }
+deleteButton.addEventListener('click', button => {
+    calculator.delete()
+    calculator.updateDisplay()
 })
