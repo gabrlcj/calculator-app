@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="assets/design/logo2.png" width="250">
+    <img src="assets/design/logo2.png" width="275" height="220">
 </div>
 
 <div align="center">
@@ -48,7 +48,7 @@
 ---
 
 ## Licença ⚖️
-
+#### *Esse projeto está sob a licença MIT. Para mais detalhes [LICENSE](https://github.com/gabrlcj/calculator-app/blob/056685e8de3d72fd5a91379b1e79dc994355151f/LICENSE).*
 
 ---
 
@@ -57,6 +57,6 @@
 <img style='border-radius:50%' width='180' src="https://unavatar.now.sh/github/gabrlcj">
 <p><b>Gabriel Bittencourt Penteado 🔰</b></p>
 
-Feito com 🤎 por Gabriel B. Penteado. Entre em contato! 👋🏽
+#### Feito com 🤎 por Gabriel B. Penteado. Entre em contato! 👋🏽
 
 [![Linkedin Badge](https://img.shields.io/badge/-Gabriel-orange?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabriel-bittencourt-penteado/)](https://www.linkedin.com/in/gabriel-bittencourt-penteado/) 
