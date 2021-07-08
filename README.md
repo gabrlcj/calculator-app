@@ -1,10 +1,8 @@
 <div align="center">
-    <img src="assets/design/logo2.png">
+    <img src="assets/design/logo2.png" width="300">
 </div>
 
 <h2 align="center">Simples calculadora com 3 temas diferentes.</h2>
-
----
 
 <div align="center">
     <b>
@@ -14,10 +12,10 @@
         <a href="#licença">Licença</a> •
         <a href="#autor">Autor</a>
     </b>
-</div>
+</div><br><br>
 
 <div align="center">
-    <img src="assets/design/calc-app-mobile.gif" width="300">
+    <img src="assets/design/calc-app-mobile.gif" width="250">
 </div>
 
 
@@ -29,12 +27,12 @@
 ---
 
 ## Tecnologias 🛠️
-*Linguagens:*
+### Linguagens:
  - **HTML**
  - **[SASS](https://sass-lang.com/)**
  - **JavaScript**
 
-    *Funções:*
+    ### Funções:
      - [x] Switch de temas
      - [x] Smooth transitions
      - [x] Display do último número digitado
@@ -44,9 +42,9 @@
 ## Imagens 📸
 <div align="center">
     <h4>Exposição de cada tema:</h4>
-    <img src="assets/design/theme1-desktop.png" width="150">
-    <img src="assets/design/theme2-desktop.png" width="150">
-    <img src="assets/design/theme3-desktop.png" width="150">
+    <img src="assets/design/theme1-desktop.png" width="250">
+    <img src="assets/design/theme2-desktop.png" width="250">
+    <img src="assets/design/theme3-desktop.png" width="250">
 </div>
 
 ---
