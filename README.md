@@ -13,7 +13,7 @@
         <a href="#licença-%EF%B8%8F">Licença</a> •
         <a href="#autor-">Autor</a>
     </b>
-</div><br><br>
+</div><br>
 
 <div align="center">
     <img src="assets/design/calc-app-mobile.gif" width="200">
