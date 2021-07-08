@@ -40,9 +40,9 @@
 ## Imagens 📸
 <div align="center">
     <h4>Exposição de cada tema:</h4>
-    <img src="assets/design/theme1-desktop.png" width="255">
-    <img src="assets/design/theme2-desktop.png" width="255">
-    <img src="assets/design/theme3-desktop.png" width="255">
+    <img src="assets/design/theme1-desktop.png" width="275">
+    <img src="assets/design/theme2-desktop.png" width="275">
+    <img src="assets/design/theme3-desktop.png" width="275">
 </div>
 
 ---
