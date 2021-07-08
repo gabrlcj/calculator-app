@@ -1,7 +1,8 @@
 <div align="center">
     <img src="assets/design/logo2.png">
-    <b>Simples calculadora com 3 temas diferentes.</b>
 </div>
+
+<h2 align="center">Simples calculadora com 3 temas diferentes.</h2>
 
 ---
 
@@ -13,9 +14,12 @@
         <a href="#licença">Licença</a> •
         <a href="#autor">Autor</a>
     </b>
-    <br>
-    <img src="assets/design/calc-app-mobile.gif">
 </div>
+
+<div align="center">
+    <img src="assets/design/calc-app-mobile.gif" width="300">
+</div>
+
 
 ## Sobre 🧮
 **Uma aplicação feita para desenvoler uma calculadora com 3 temas distintos, podendo altera-los por um botão de switch.**
@@ -40,9 +44,9 @@
 ## Imagens 📸
 <div align="center">
     <h4>Exposição de cada tema:</h4>
-    <img src="assets/design/theme1-desktop.png" width="100">
-    <img src="assets/design/theme2-desktop.png" width="100">
-    <img src="assets/design/theme3-desktop.png" width="100">
+    <img src="assets/design/theme1-desktop.png" width="150">
+    <img src="assets/design/theme2-desktop.png" width="150">
+    <img src="assets/design/theme3-desktop.png" width="150">
 </div>
 
 ---
