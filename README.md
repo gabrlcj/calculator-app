@@ -1,10 +1,9 @@
 <div align="center">
     <img src="assets/design/logo2.png" width="285" height="135">
 </div>
-
 <h3 align="center"><a href="https://calculator-app-beige.vercel.app/">Site do app aqui</a></h3>
 
-<br>
+---
 
 <div align="center">
     <b>
