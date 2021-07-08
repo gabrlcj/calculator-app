@@ -1,21 +1,19 @@
 <div align="center">
-    <img src="assets/design/logo2.png" width="200">
+    <img src="assets/design/logo2.png" width="250">
 </div>
-
-<h3 align="center">Simples calculadora com 3 temas diferentes.</h3><br>
 
 <div align="center">
     <b>
         <a href="#sobre-">Sobre</a> •
-        <a href="#tecnologias-">Tecnologias</a> •
+        <a href="#tecnologias-%EF%B8%8F">Tecnologias</a> •
         <a href="#imagens-">Imagens</a> •
-        <a href="#licença-">Licença</a> •
+        <a href="#licença-%EF%B8%8F">Licença</a> •
         <a href="#autor-">Autor</a>
     </b>
 </div><br><br>
 
 <div align="center">
-    <img src="assets/design/calc-app-mobile.gif" width="250">
+    <img src="assets/design/calc-app-mobile.gif" width="200">
 </div>
 
 
@@ -32,10 +30,10 @@
  - **[SASS](https://sass-lang.com/)**
  - **JavaScript**
 
-    ### Funções:
-       - [x] Switch de temas
-       - [x] Smooth transitions
-       - [x] Display do último número digitado
+      ### Funções:
+      - [x] Switch de temas
+      - [x] Smooth transitions
+      - [x] Display do último número digitado
 
 ---
 
