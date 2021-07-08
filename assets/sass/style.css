@@ -28,7 +28,6 @@ body {
 
 .calculator {
   margin: 0 auto;
-  overflow-y: auto;
   width: min(90vw, 700px);
 }
 

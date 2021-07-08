@@ -34,7 +34,6 @@ body {
 
 .calculator {
     margin: 0 auto;
-    overflow-y: auto;
     @include container-size(90vw, 700px);
 
     @include screen-size(small) {
