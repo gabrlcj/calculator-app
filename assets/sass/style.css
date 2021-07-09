@@ -26,6 +26,12 @@ body {
   transition: background .5s;
 }
 
+@media (max-width: 480px) {
+  body {
+    height: auto;
+  }
+}
+
 .calculator {
   margin: 0 auto;
   width: min(90vw, 700px);
@@ -34,6 +40,47 @@ body {
 @media (max-width: 480px) {
   .calculator {
     width: min(90vw, 425px);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.attribution {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #eae3dc;
+  padding: 1.5rem 0;
+  text-shadow: 2px 2px 0px #121212;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #d03f2f;
+}
+
+@media (max-width: 480px) {
+  .attribution a {
+    text-decoration: underline;
+  }
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .attribution {
+    font-size: 1.3rem;
   }
 }
 
@@ -156,6 +203,15 @@ button:hover {
   transition: background .5s;
 }
 
+.white-theme .attribution {
+  color: #35352c;
+  text-shadow: 2px 2px 0px #a5a5a5;
+}
+
+.white-theme .attribution a {
+  color: #ca5502;
+}
+
 .white-theme button {
   color: #35352c;
   border-bottom-color: #a69d91;
@@ -207,6 +263,15 @@ button:hover {
   background: #160628;
   -webkit-transition: background .5s;
   transition: background .5s;
+}
+
+.purple-theme .attribution {
+  color: #ffe53d;
+  text-shadow: 2px 2px 0px #bc15f4;
+}
+
+.purple-theme .attribution a {
+  color: #00e0d1;
 }
 
 .purple-theme button {
@@ -288,7 +353,7 @@ button:hover {
   -webkit-transition: color .5s;
   transition: color .5s;
   margin-bottom: 2rem;
-  text-shadow: 5px 2px 0px black;
+  text-shadow: 5px 2px 0px #121212;
 }
 
 .header .title .theme-toggle {
@@ -306,7 +371,7 @@ button:hover {
   margin-right: 1rem;
   -webkit-transition: color .5s;
   transition: color .5s;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 2px 2px 0px #121212;
 }
 
 @media (max-width: 480px) {
@@ -322,7 +387,7 @@ button:hover {
   background: #182034;
   -webkit-transition: background .5s;
   transition: background .5s;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 2px 2px 0px #121212;
 }
 
 .header .number .previous-number {
@@ -484,7 +549,7 @@ button:hover {
 }
 
 .purple-theme .calculator-keys .button-wrapper-alt .equal {
-  color: black;
+  color: #121212;
   background: #00e0d1;
   border-bottom-color: #6cf9f2;
   -webkit-transition: color .5s;

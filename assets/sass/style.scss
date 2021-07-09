@@ -22,7 +22,7 @@
             font-size: 2.5rem;
             transition: color .5s;
             margin-bottom: 2rem;
-            text-shadow: 5px 2px 0px black;
+            text-shadow: 5px 2px 0px #121212;
         }
 
         .theme-toggle {
@@ -34,7 +34,7 @@
                 font-size: .8rem;
                 margin-right: 1rem;
                 transition: color .5s;
-                text-shadow: 2px 2px 0px black;
+                text-shadow: 2px 2px 0px #121212;
 
                 @include screen-size(small) {
                     margin-right: .8rem;
@@ -49,7 +49,7 @@
         margin-bottom: 1.5rem;
         background: $screen-bg;
         transition: background .5s;
-        text-shadow: 2px 2px 0px black;
+        text-shadow: 2px 2px 0px #121212;
 
         .previous-number {
             text-align: right;
@@ -206,7 +206,7 @@
 
         .button-wrapper-alt {
             .equal {
-                color: black;
+                color: #121212;
                 background: $P-equal-bg;
                 border-bottom-color: $P-shadow-equal-bg;
                 transition: color .5s;

@@ -30,6 +30,10 @@ body {
     font: 700 2rem 'Spartan', sans-serif;
     background: $main-bg;
     transition: background .5s;
+
+    @include screen-size(small) {
+        height: auto;
+    }
 }
 
 .calculator {
@@ -38,6 +42,43 @@ body {
 
     @include screen-size(small) {
         @include container-size(90vw, 425px);
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.attribution {
+    font-size: 1.5rem;
+    text-align: center;
+    color: $number-bg;
+    padding: 1.5rem 0;
+    text-shadow: 2px 2px 0px #121212;
+
+    a {
+        text-decoration: none;
+        color: $equal-bg;
+
+        @include screen-size(small) {
+            text-decoration: underline;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @include screen-size(small) {
+        font-size: 1.3rem;
     }
 }
 
@@ -148,6 +189,15 @@ button {
 .white-theme {
     background: $W-main-bg;
     transition: background .5s;
+
+    .attribution {
+        color: $W-number-color;
+        text-shadow: 2px 2px 0px #a5a5a5;
+    
+        a {
+            color: $W-equal-bg;
+        }
+    }
     
     button {
         color: $W-number-color;
@@ -201,6 +251,15 @@ button {
     background: $P-main-bg;
     transition: background .5s;
     
+    .attribution {
+        color: $P-number-color;
+        text-shadow: 2px 2px 0px $P-shadow-del-reset-bg;
+    
+        a {
+            color: $P-equal-bg;
+        }
+    }
+
     button {
         color: $P-number-color;
         border-bottom-color: $P-shadow-number-bg;
